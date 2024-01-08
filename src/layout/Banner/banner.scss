@@ -1,0 +1,57 @@
+.banner {
+    position: relative;
+    background-position: center;
+    max-width: 100%;
+    height: 250px;
+    display: grid;
+    margin: auto;
+    place-items: center;
+    color: white;
+    border-radius: 1rem;
+    background-size: cover;
+    background-image: url("../../assets/banner.png");
+    margin-bottom: 2rem;
+
+    @media only screen and (width <= 768px) {
+        place-items: flex-start;
+        height: 140px;
+        display: flex;
+        align-items: center;
+    }
+
+    @media only screen and (width <= 480px) {
+        height: 100px;
+    }
+
+    &::before {
+        background: #000000;
+        position: absolute;
+        content: "";
+        inset: 0;
+        border-radius: 1rem;
+        opacity: 0.3;
+    }
+
+    &__text {
+        position: relative;
+        font-style: normal;
+        font-size: 48px;
+        font-weight: 500;
+        align-items: center;
+        color: white;
+        width: 705px;  
+
+        @media only screen and (width <= 768px) {
+          display: flex;
+          font-size: 24px;
+          width: 60%;
+          left: 10px;
+        } 
+
+        @media only screen and (width <= 480px) {
+            font-size: 22px;
+            width: 62%;
+        }
+
+    }
+}

@@ -1,0 +1,11 @@
+.home {
+    margin: 0 auto;
+    margin-bottom: 3rem;
+}
+
+/* Mobile */
+@media only screen and (width <= 768px) {
+    .home {
+          padding-inline: 0;
+    }
+}
