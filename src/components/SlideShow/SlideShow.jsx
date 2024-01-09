@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import './slideShow.scss';
 import aboutBanner from '../../assets/background.jpg';
-import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export function SlideShow(props) {
   const pictures = props.pictures;
@@ -38,21 +36,17 @@ export function SlideShow(props) {
       <div className="image__container">
         {getCarouselorImgDefault()}
       </div>
-      {isPicturesAvailable() && (
+      {isPicturesAvailable() && pictures.length > 1 && (
         <>
-          {pictures.length > 1 && (
-            <>
-              <button className='btn btn-previous' onClick={moveToPrevious}>
-                <FontAwesomeIcon icon={faChevronLeft} />
-              </button>
-              <span className='slide__counter'>
-                {currentPicture + 1} / {pictures.length}
-              </span>
-              <button className='btn btn-next' onClick={moveToNext}>
-                <FontAwesomeIcon icon={faChevronRight} />
-              </button>
-            </>
-          )}
+          <button className='btn btn-previous' onClick={moveToPrevious}>
+            <i className="chevron left"></i> {/* Remplacement par une balise <i> */}
+          </button>
+          <span className='slide__counter'>
+            {currentPicture + 1} / {pictures.length}
+          </span>
+          <button className='btn btn-next' onClick={moveToNext}>
+            <i className="chevron right"></i> {/* Remplacement par une balise <i> */}
+          </button>
         </>
       )}
     </div>

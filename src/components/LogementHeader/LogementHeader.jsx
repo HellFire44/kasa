@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types'; // Assurez-vous d'installer PropTypes si ce n'est pas déjà fait
 import './logementHeader.scss';
 
 function LogementHeader({ currentApartment }) {
@@ -7,7 +6,7 @@ function LogementHeader({ currentApartment }) {
 
   const name = currentApartment.host?.name.split(' ') || [];
   const firstName = name[0] || '';
-  const lastName = name[1] || ''; // Gère le cas où il n'y a qu'une partie du nom
+  const lastName = name[1] || ''; 
 
   return (
     <section className="apartment__header">
@@ -16,7 +15,7 @@ function LogementHeader({ currentApartment }) {
         <p>{currentApartment.location}</p>
         <div className="apartment__tags">
           {currentApartment.tags.map((tag, index) => (
-            <span key={tag + index}>{tag}</span> // Ajout de l'index pour garantir l'unicité de la clé
+            <span key={tag + index}>{tag}</span>
           ))}
         </div>
       </div>
@@ -39,9 +38,5 @@ function LogementHeader({ currentApartment }) {
     </section>
   )
 }
-
-LogementHeader.propTypes = {
-  currentApartment: PropTypes.object.isRequired
-};
 
 export default LogementHeader;

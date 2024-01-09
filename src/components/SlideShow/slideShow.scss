@@ -9,7 +9,7 @@
         width: 100%;
         position: relative; 
 
-        @media only screen and (width <= 768px) {
+        @media only screen and (max-width: 768px) {
             height: 285px;   
         }
     }
@@ -25,10 +25,6 @@
         box-shadow: rgb(149 157 165 / 20%) 0px 8px 24px;
         opacity: 0;
         transition: opacity 0.5s ease-in-out; 
-        
-        .show {
-            opacity: 1;
-        }
     }
 }
 
@@ -47,6 +43,26 @@
     font-size: 3rem;
     border-width: 0;
 
+    &-next, &-previous {
+        i.chevron {
+            border: solid white;
+            border-width: 0 3px 3px 0;
+            display: inline-block;
+            padding: 17px;
+            transition: transform 0.4s ease-in-out;
+
+            &.left {
+                transform: rotate(135deg);
+                -webkit-transform: rotate(135deg);
+            }
+
+            &.right {
+                transform: rotate(-45deg);
+                -webkit-transform: rotate(-45deg);
+            }
+        }
+    }
+
     &-next {
         right: 0;
         
@@ -62,7 +78,6 @@
             outline: none;
         }
     }
-
 }
 
 .slide__counter {
@@ -73,8 +88,8 @@
     bottom: 2rem;
 }
 
-@media only screen and (width <= 768px) {
+@media only screen and (max-width: 768px) {
     .image__container > img {
-          height: 300px;
+        height: 300px;
     }
 }
